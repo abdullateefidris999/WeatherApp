@@ -14,7 +14,7 @@ A real-time weather application built with HTML, CSS, JavaScript, and OpenWeathe
 - OpenWeatherMap API
 
 ## Live Demo
-[View on GitHub Pages](https://yourusername.github.io/weather-app/)
+[View on Vercel](https://weather-app-kappa-ten-78.vercel.app/)
 
 ## Challenges Faced
 - Handling API rate limits
@@ -45,5 +45,5 @@ async function fetchWeather(city) {
 ```
 
 ## Screenshots
-![Screenshots](./images/screenshot.png){: width="70%"}
+![Screenshots](./images/screenshot.png)
 ![Screenshots](./images/mobileview.png)
