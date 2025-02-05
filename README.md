@@ -1,4 +1,4 @@
-# WeatherWise 🌤️
+# WeatherApp 🌤️
 A real-time weather application built with HTML, CSS, JavaScript, and OpenWeatherMap API.
 
 ## Features
