@@ -3,40 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherApp</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>ClimateSphere ☀️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>WeatherWise 🌤️</h1>
-    </header>
-
-    <main>
-        <section class="search-section">
-            <input type="text" id="city-input" placeholder="Enter city name...">
-            <button id="search-btn">Search</button>
-        </section>
-
-        <section class="weather-card hidden">
-            <div class="weather-icon">
-                <img src="" alt="Weather Icon" id="weather-icon">
+    <div class="container">
+        <header>
+            <h1 class="title">WeatherApp 🌍</h1>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Search city..." class="search-input">
+                <button id="search-btn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
-            <div class="weather-info">
-                <h2 id="city-name">City Name</h2>
-                <p id="temperature">--°C</p>
-                <p id="description">--</p>
-                <div class="details">
-                    <p>💧 Humidity: <span id="humidity">--%</span></p>
-                    <p>🌪️ Wind: <span id="wind-speed">-- m/s</span></p>
+        </header>
+
+        <main>
+            <div class="weather-card hidden">
+                <div class="weather-header">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h2 id="city-name">City Name</h2>
+                    </div>
+                    <div id="weather-icon" class="weather-icon"></div>
+                </div>
+
+                <div class="weather-info">
+                    <div class="temperature-section">
+                        <p class="temperature" id="temperature">--°C</p>
+                        <p class="description" id="description">--</p>
+                    </div>
+                    
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <p class="detail-label">Humidity</p>
+                                <p class="detail-value" id="humidity">--%</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <p class="detail-label">Wind Speed</p>
+                                <p class="detail-value" id="wind-speed">-- m/s</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <div id="error-message" class="hidden">City not found. Try again!</div>
-    </main>
+            <div id="error-message" class="error-card hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>City not found. Please try again!</p>
+            </div>
+        </main>
+    </div>
 
-
-
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

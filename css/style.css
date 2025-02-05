@@ -1,80 +1,204 @@
 /* Base Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
     padding: 20px;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
 header {
     text-align: center;
-    margin-bottom: 2rem;
+    padding: 2rem 0;
 }
 
-.search-section {
+.title {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.search-container {
     display: flex;
-    justify-content: center;
     gap: 10px;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.search-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Weather Card */
+.weather-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.weather-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
 }
 
-#city-input {
-    padding: 10px;
-    width: 250px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+.location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-#search-btn {
-    padding: 10px 20px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+.location i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-#search-btn:hover {
-    background: #45a049;
-}
-
-.weather-card {
-    background: white;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.weather-icon img {
+.weather-icon {
     width: 100px;
     height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.details {
+/* Weather Info */
+.temperature-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.temperature {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.description {
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+}
+
+/* Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    align-items: center;
+    gap: 15px;
+}
+
+.detail-item i {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Error Message */
+.error-card {
+    background: rgba(255, 77, 77, 0.15);
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.error-card i {
+    color: #ff4d4d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .temperature {
+        font-size: 3rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .hidden {
     display: none !important;
-}
-
-#error-message {
-    color: red;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    #city-input {
-        width: 200px;
-    }
 }
